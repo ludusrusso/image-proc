@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -24,6 +25,10 @@ type ProcConfig struct {
 	Gravity GravityType
 	Width   uint
 	Height  uint
+}
+
+func (c ProcConfig) String() string {
+	return fmt.Sprintf("c_%s,g_%s,w_%d,h_%d", c.Crop, c.Gravity, c.Width, c.Height)
 }
 
 func Parse(cnfs string) ProcConfig {
