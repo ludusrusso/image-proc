@@ -5,9 +5,9 @@ import (
 	"strings"
 )
 
-type paraseConfg = func(cnf string, c *ProcConfig) bool
+type paraseConfg = func(cnf string, c *Config) bool
 
-func parseCropConfig(cnf string, c *ProcConfig) bool {
+func parseCropConfig(cnf string, c *Config) bool {
 	crop, ok := checkConfig(cnf, "c_")
 	if !ok {
 		return false
@@ -29,7 +29,7 @@ func parseCropConfig(cnf string, c *ProcConfig) bool {
 	return true
 }
 
-func parseGravityConfig(cnf string, c *ProcConfig) bool {
+func parseGravityConfig(cnf string, c *Config) bool {
 	grav, ok := checkConfig(cnf, "g_")
 	if !ok {
 		return false
@@ -50,7 +50,7 @@ func parseGravityConfig(cnf string, c *ProcConfig) bool {
 	return true
 }
 
-func parseWidthConfig(cnf string, c *ProcConfig) bool {
+func parseWidthConfig(cnf string, c *Config) bool {
 	ws, ok := checkConfig(cnf, "w_")
 	if !ok {
 		return false
@@ -64,7 +64,7 @@ func parseWidthConfig(cnf string, c *ProcConfig) bool {
 	return true
 }
 
-func parseHeightConfig(cnf string, c *ProcConfig) bool {
+func parseHeightConfig(cnf string, c *Config) bool {
 	hs, ok := checkConfig(cnf, "h_")
 	if !ok {
 		return false

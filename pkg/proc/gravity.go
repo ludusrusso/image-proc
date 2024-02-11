@@ -3,8 +3,8 @@ package proc
 import (
 	"image"
 
-	"github.com/ludusrusso/image-proc/config"
-	"github.com/ludusrusso/image-proc/proc/internal/face"
+	"github.com/ludusrusso/image-proc/pkg/config"
+	"github.com/ludusrusso/image-proc/pkg/proc/internal/face"
 )
 
 func computeGravity(img image.Image, gconf config.GravityType) image.Rectangle {

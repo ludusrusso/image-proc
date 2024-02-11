@@ -20,18 +20,18 @@ const (
 	GravityTypeCenter GravityType = "center"
 )
 
-type ProcConfig struct {
+type Config struct {
 	Crop    CropType
 	Gravity GravityType
 	Width   uint
 	Height  uint
 }
 
-func (c ProcConfig) String() string {
+func (c Config) String() string {
 	return fmt.Sprintf("c_%s,g_%s,w_%d,h_%d", c.Crop, c.Gravity, c.Width, c.Height)
 }
 
-func Parse(cnfs string) ProcConfig {
+func Parse(cnfs string) Config {
 	parsers := map[string]paraseConfg{
 		"crop":   parseCropConfig,
 		"height": parseHeightConfig,
@@ -39,7 +39,7 @@ func Parse(cnfs string) ProcConfig {
 		"grav":   parseGravityConfig,
 	}
 
-	c := ProcConfig{
+	c := Config{
 		Crop:    CropTypeScale,
 		Gravity: GravityTypeCenter,
 	}

@@ -3,10 +3,10 @@ package proc
 import (
 	"image"
 
-	"github.com/ludusrusso/image-proc/config"
+	"github.com/ludusrusso/image-proc/pkg/config"
 )
 
-func ProcImage(cnf config.ProcConfig, img image.Image) image.Image {
+func ProcImage(cnf config.Config, img image.Image) image.Image {
 	grav := computeGravity(img, cnf.Gravity)
 
 	if cnf.Crop == config.CropTypeCrop {
